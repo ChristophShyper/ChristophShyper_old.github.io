@@ -1,2 +1,2 @@
 # ChristophShyper.github.io
-Just a home page
+Just a home/portfolio page
