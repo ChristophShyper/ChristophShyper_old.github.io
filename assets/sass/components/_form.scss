@@ -1,5 +1,5 @@
 ///
-/// Eventually by HTML5 UP
+/// Fractal by HTML5 UP
 /// html5up.net | @ajlkn
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 ///
@@ -8,57 +8,13 @@
 
 	form {
 		margin: 0 0 _size(element-margin) 0;
-
-		.message {
-			@include icon(false, solid);
-			@include vendor('transition', (
-				'opacity #{_duration(transition)} ease-in-out',
-				'transform #{_duration(transition)} ease-in-out'
-			));
-			@include vendor('transform', 'scale(1.05)');
-			height: _size(element-height);
-			line-height: _size(element-height);
-			opacity: 0;
-
-			&:before {
-				margin-right: 0.5em;
-			}
-
-			&.visible {
-				@include vendor('transform', 'scale(1)');
-				opacity: 1;
-			}
-
-			&.success {
-				color: _palette(positive, bg);
-
-				&:before {
-					content: '\f00c';
-				}
-			}
-
-			&.failure {
-				color: _palette(negative, bg);
-
-				&:before {
-					content: '\f119';
-				}
-			}
-		}
 	}
 
 	label {
-		color: _palette(fg-bold);
 		display: block;
 		font-size: 0.9em;
 		font-weight: _font(weight-bold);
 		margin: 0 0 (_size(element-margin) * 0.5) 0;
-	}
-
-	@include keyframes(focus) {
-		0% { @include vendor('transform', 'scale(1)'); }
-		50% { @include vendor('transform', 'scale(1.025)'); }
-		100% { @include vendor('transform', 'scale(1)'); }
 	}
 
 	input[type="text"],
@@ -67,15 +23,10 @@
 	select,
 	textarea {
 		@include vendor('appearance', 'none');
-		@include vendor('transform', 'scale(1)');
-		@include vendor('transition', (
-			'border-color #{_duration(transition)} ease',
-			'background-color #{_duration(transition)} ease'
-		));
-		background-color: transparent;
 		border-radius: _size(border-radius);
 		border: none;
-		border: solid _size(border-width) _palette(border);
+		border-style: solid;
+		border-width: _size(border-width);
 		color: inherit;
 		display: block;
 		outline: 0;
@@ -85,12 +36,6 @@
 
 		&:invalid {
 			box-shadow: none;
-		}
-
-		&:focus {
-			@include vendor('animation', 'focus 0.1s');
-			background-color: _palette(border-bg);
-			border-color: _palette(accent, bg);
 		}
 	}
 
@@ -142,7 +87,6 @@
 
 		& + label {
 			@include icon(false, solid);
-			color: _palette(fg);
 			cursor: pointer;
 			display: inline-block;
 			font-size: 1em;
@@ -152,35 +96,25 @@
 			position: relative;
 
 			&:before {
-				background: _palette(border-bg);
 				border-radius: _size(border-radius);
-				border: solid _size(border-width) _palette(border);
+				border-style: solid;
+				border-width: _size(border-width);
 				content: '';
 				display: inline-block;
 				font-size: 0.8em;
-				height: (_size(element-height) * 0.6);
+				height: (_size(element-height) * 0.75);
 				left: 0;
-				line-height: (_size(element-height) * 0.6);
+				line-height: (_size(element-height) * 0.75);
 				position: absolute;
 				text-align: center;
 				top: 0;
-				width: (_size(element-height) * 0.6);
+				width: (_size(element-height) * 0.75);
 			}
 		}
 
 		&:checked + label {
 			&:before {
-				background: _palette(accent, bg);
-				border-color: _palette(accent, bg);
-				color: _palette(accent, fg-bold);
 				content: '\f00c';
-			}
-		}
-
-		&:focus + label {
-			&:before {
-				border-color: _palette(accent, bg);
-				box-shadow: 0 0 0 _size(border-width) _palette(accent, bg);
 			}
 		}
 	}
@@ -202,26 +136,116 @@
 	}
 
 	::-webkit-input-placeholder {
-		color: _palette(fg-light) !important;
 		opacity: 1.0;
 	}
 
 	:-moz-placeholder {
-		color: _palette(fg-light) !important;
 		opacity: 1.0;
 	}
 
 	::-moz-placeholder {
-		color: _palette(fg-light) !important;
 		opacity: 1.0;
 	}
 
 	:-ms-input-placeholder {
-		color: _palette(fg-light) !important;
 		opacity: 1.0;
 	}
 
 	.formerize-placeholder {
-		color: _palette(fg-light) !important;
 		opacity: 1.0;
 	}
+
+	@mixin color-form($p: null) {
+
+		label {
+			color: _palette($p, fg-bold);
+		}
+
+		input[type="text"],
+		input[type="password"],
+		input[type="email"],
+		select,
+		textarea {
+			color: inherit;
+			background-color: _palette($p, border-bg);
+			border-color: _palette($p, border);
+
+			&:focus {
+				@if _palette($p, invert) == true {
+					border-color: _palette($p, fg-bold);
+					box-shadow: 0 0 0 _size(border-width) _palette($p, fg-bold);
+				}
+				@else {
+					border-color: _palette(accent1, bg);
+					box-shadow: 0 0 0 _size(border-width) _palette(accent1, bg);
+				}
+			}
+		}
+
+		.select-wrapper:before {
+			color: _palette($p, border);
+		}
+
+		input[type="checkbox"],
+		input[type="radio"], {
+
+			& + label {
+				color: _palette($p, fg);
+
+				&:before {
+					background-color: _palette($p, border-bg);
+					border-color: _palette($p, border);
+				}
+			}
+
+			&:checked + label {
+				&:before {
+					@if _palette($p, invert) == true {
+						background-color: _palette($p, fg-bold);
+						border-color: _palette($p, fg-bold);
+						color: _palette($p, bg);
+					}
+					@else {
+						background-color: _palette(accent1, bg);
+						border-color: _palette(accent1, bg);
+						color: _palette(accent1, fg-bold);
+					}
+				}
+			}
+
+			&:focus + label {
+				&:before {
+					@if _palette($p, invert) == true {
+						border-color: _palette($p, fg-bold);
+						box-shadow: 0 0 0 _size(border-width) _palette($p, fg-bold);
+					}
+					@else {
+						border-color: _palette(accent1, bg);
+						box-shadow: 0 0 0 _size(border-width) _palette(accent1, bg);
+					}
+				}
+			}
+		}
+
+		::-webkit-input-placeholder {
+			color: _palette($p, fg-light) !important;
+		}
+
+		:-moz-placeholder {
+			color: _palette($p, fg-light) !important;
+		}
+
+		::-moz-placeholder {
+			color: _palette($p, fg-light) !important;
+		}
+
+		:-ms-input-placeholder {
+			color: _palette($p, fg-light) !important;
+		}
+
+		.formerize-placeholder {
+			color: _palette($p, fg-light) !important;
+		}
+	}
+
+	@include color-form;
