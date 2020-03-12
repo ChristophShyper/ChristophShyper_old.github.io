@@ -1,3 +1,7 @@
 # intellij
 /ChristophShyper.github.io.iml
 /.idea/
+
+# Ruby
+/Gemfile.lock
+/.jekyll-cache/
