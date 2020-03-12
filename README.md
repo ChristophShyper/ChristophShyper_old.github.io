@@ -8,5 +8,7 @@ My IT portfolio page
 Needs Ruby installed
 ```
 bundle init
+bundle install
+bundle exec jekyll build
 bundle exec jekyll serve
 ```
