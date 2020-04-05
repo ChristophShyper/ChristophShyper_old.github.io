@@ -1,16 +1,14 @@
-name: On commit push
+name: On each commit push
 
-on:
-  push:
-    branches:
-      - "**"
+on: push
 
 jobs:
-  build_and_push:
+  pull_request:
     runs-on: ubuntu-latest
+    name: Create pull request
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
 
       - name: Create pull request
         if: github.actor == 'ChristophShyper'
