@@ -18,4 +18,4 @@
 * [ ] Other dependency updated
 
 
-*Check [CONTRIBUTING.md](https://github.com/devops-infra/.github/blob/master/CONTRIBUTING.md) for more information*
+*Check [CONTRIBUTING.md](https://github.com/ChristophShyper/.github/blob/master/CONTRIBUTING.md) for more information*
