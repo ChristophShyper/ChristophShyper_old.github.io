@@ -14,9 +14,8 @@
 
 ### Checklist
 * [ ] Pull request was created manually
-* [ ] Provided a clear and concise description of what the issue is.
-* [ ] Given a clear and concise description of what was changed.
-* [ ] Associated issue has been already created and link was provided.
+* [ ] Direct dependency updated
+* [ ] Other dependency updated
 
 
 *Check [CONTRIBUTING.md](https://github.com/devops-infra/.github/blob/master/CONTRIBUTING.md) for more information*
