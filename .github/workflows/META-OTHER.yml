@@ -1,0 +1,20 @@
+name: Other metadata
+
+on:
+  push:
+    branches-ignore: master
+
+jobs:
+  labels:
+    name: Update repo labels
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Update labels - dry run
+        uses: crazy-max/ghaction-github-labeler@v1
+        with:
+          dry_run: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
