@@ -18,7 +18,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           assignee: ${{ github.actor }}
-          label: automatic,dependency
+          label: dependency
           template: .github/PULL_REQUEST_TEMPLATE/DEPENDENCY.md
           old_string: "<!-- Write you description here -->"
           new_string: ${{ github.event.commits[0].message }}
@@ -30,7 +30,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           assignee: ${{ github.actor }}
-          label: automatic,bugfix
+          label: bugfix
           template: .github/PULL_REQUEST_TEMPLATE/BUGFIX.md
           old_string: "<!-- Write you description here -->"
           new_string: ${{ github.event.commits[0].message }}
@@ -42,7 +42,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           assignee: ${{ github.actor }}
-          label: automatic,feature
+          label: feature
           template: .github/PULL_REQUEST_TEMPLATE/FEATURE.md
           old_string: "<!-- Write you description here -->"
           new_string: ${{ github.event.commits[0].message }}
@@ -54,19 +54,19 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           assignee: ${{ github.actor }}
-          label: automatic,documentation
+          label: documentation
           template: .github/PULL_REQUEST_TEMPLATE/DOCUMENTATION.md
           old_string: "<!-- Write you description here -->"
           new_string: ${{ github.event.commits[0].message }}
           get_diff: true
 
       - name: Create pull request - other (conditional)
-        if: startsWith(github.ref, '!refs/heads/dependency') && startsWith(github.ref, '!refs/heads/bugfix') && startsWith(github.ref, '!refs/heads/feature') && startsWith(github.ref, '!refs/heads/documentation')
+        if: !startsWith(github.ref, 'refs/heads/dependency') && !startsWith(github.ref, 'refs/heads/bugfix') && !startsWith(github.ref, 'refs/heads/feature') && !startsWith(github.ref, 'refs/heads/documentation')
         uses: devops-infra/action-pull-request@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           assignee: ${{ github.actor }}
-          label: automatic,feature
+          label: feature
           template: .github/PULL_REQUEST_TEMPLATE/FEATURE.md
           old_string: "<!-- Write you description here -->"
           new_string: ${{ github.event.commits[0].message }}
