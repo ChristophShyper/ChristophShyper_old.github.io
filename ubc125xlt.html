@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<!--
+	Fractal by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+    <title>UBC125XLT - Config generator</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156886140-2"></script>
+    <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-156886140-2');
+
+    </script>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="assets/css/main.css"/>
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css"/>
+    </noscript>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+</head>
+<body class="is-preload">
+
+<!-- Header -->
+<header id="header">
+    <div class="content">
+        <p>
+            This page generates config file for your <b>Uniden UBC125XLT</b> scanner.<br>
+        </p>
+        <p>
+            To load the file use <a href="https://www.nick-bailey.co.uk/scan125/index.html" target="_blank">Scan125 Control Program Suite</a>.
+        </p>
+        <p>
+            It's a free alternative to an official software.
+        </p>
+        <ul class="actions">
+            <li><a href="#generator" class="button icon solid fa-broadcast-tower scrolly">Generator</a></li>
+            <li><a href="index.html" class="button icon solid fa-home scrolly">Main page</a></li>
+        </ul>
+    </div>
+</header>
+
+<!-- Body -->
+<section id="generator" class="wrapper">
+    <div class="inner">
+        <header class="major">
+            <h2>
+                UBC125XLT generator
+            </h2>
+            <p>
+                Select band groups that you want to have and click on a blue button below to generate a file having all of them.<br>
+                Be aware that it's meant for Polish users, hence having only Polish frequencies.<br>
+                To see included frequencies click on the band name.<br>
+                All frequencies will be sorted alphabetically.
+            </p>
+        </header>
+        <section>
+            <form id="generate">
+                <div class="row gtr-uniform">
+                    <div class="col-6 col-12-small">
+                        <input type="checkbox" id="airports-military" name="airports-military" checked>
+                        <label for="airports-military"><a href="assets/ubc125xlt/airports_military.txt" target="_blank">Military air bases</a></label>
+                    </div>
+                    <div class="col-6 col-12-small">
+                        <input type="checkbox" id="airports-major" name="airports-major" checked>
+                        <label for="airports-major"><a href="assets/ubc125xlt/airports_major.txt" target="_blank">Major civil airports</a></label>
+                    </div>
+                    <div class="col-6 col-12-small">
+                        <input type="checkbox" id="airports-minor" name="airports-minor" checked>
+                        <label for="airports-minor"><a href="assets/ubc125xlt/airports_minor.txt" target="_blank">Minor civil airfields</a></label>
+                    </div>
+                    <div class="col-6 col-12-small">
+                        <input type="checkbox" id="services-emergency" name="services-emergency" checked>
+                        <label for="services-emergency"><a href="assets/ubc125xlt/services_emergency.txt" target="_blank">Emergency services</a></label>
+                    </div>
+                    <div class="col-12">
+                        <ul class="actions">
+                            <li><input type="submit" value="Use the file on your own responsibility" class="primary" /></li>
+                            <li><input type="reset" value="Reset" /></li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </div>
+    <div class="inner alt" align="center">
+        <a href="#header" class="button icon solid fa-chevron-up scrolly">Scroll up</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer id="footer">
+    <div class="inner alt">
+        <p>
+            Here are some of my IT related profiles
+        </p>
+    </div>
+    <ul class="icons">
+        <li><a href="https://github.com/ChristophShyper" class="icon brands fa-github"><span class="label" target="_blank">GitHub</span></a></li>
+        <li><a href="https://github.com/devops-infra" class="icon brands fa-github"><span class="label" target="_blank">GitHub organization</span></a></li>
+        <li><a href="https://hub.docker.com/u/christophshyper" class="icon brands fa-docker"><span class="label" target="_blank">Hub.Docker</span></a></li>
+        <li><a href="https://hub.docker.com/orgs/devopsinfra" class="icon brands fa-docker"><span class="label" target="_blank">Hub.Docker organization</span></a></li>
+        <li><a href="https://www.linkedin.com/in/krzysztof-szyper/" class="icon brands fa-linkedin"><span class="label" target="_blank">LinkedIn</span></a></li>
+        <li><a href="https://keybase.io/biotyk" class="icon brands fa-keybase"><span class="label" target="_blank">KeyBase</span></a></li>
+        <!--					<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>-->
+    </ul>
+    <div class="inner alt">
+        <p>
+            Plus my photo and social profiles
+        </p>
+    </div>
+    <ul class="icons">
+        <li><a href="https://www.instagram.com/christophshyper" class="icon brands fa-instagram"><span class="label" target="_blank">Instagram</span></a></li>
+        <li><a href="https://www.facebook.com/ChristophShyper" class="icon brands fa-facebook" target="_blank"><span class="label">Facebook</span></a></li>
+        <li><a href="https://twitter.com/ChristophShyper" class="icon brands fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+        <li><a href="https://www.flickr.com/photos/151184530@N02/albums" class="icon brands fa-flickr"><span class="label" target="_blank">Flickr</span></a></li>
+        <!--					<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>-->
+    </ul>
+    <p class="copyright">&copy; Krzysztof Szyper. Credits: <a href="http://html5up.net">HTML5 UP</a></p>
+</footer>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/ubc125xlt/script.js"></script>
+
+</body>
+</html>
