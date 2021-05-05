@@ -1,0 +1,19 @@
+! Scan125 Scanner Data File - #scan125# - #full#
+! Scan125 Control Program © Nick Bailey 2013-2020 V3.3.0.0   http://www.nick-bailey.co.uk
+! Comments added To this file will be removed!
+! PLEASE Do Not EDIT Or MESS With THIS FILE
+MDL=UBC125XLT
+VER=!Version 1.01.00
+VOL=12
+SQL=3
+CNT=8
+BLT=AF
+BSV=14
+BTV=!2.58V
+KBP=99,0
+BPL=1
+PRI=0
+CLC=0,1,1,111111,1
+SCO=2,0
+SSG=0000000###
+SCG=0000000000
