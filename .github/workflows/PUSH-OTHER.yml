@@ -10,7 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@master
+        with:
+          fetch-depth: 0
 
       - name: Create pull request - dependency (conditional)
         if: startsWith(github.ref, 'refs/heads/dependency')
@@ -19,9 +21,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           assignee: ${{ github.actor }}
           label: dependency
-          template: .github/PULL_REQUEST_TEMPLATE/DEPENDENCY.md
-          old_string: "<!-- Write you description here -->"
-          new_string: ${{ github.event.commits[0].message }}
+          template: .github/PULL_REQUEST_TEMPLATE.md
           get_diff: true
 
       - name: Create pull request - bugfix (conditional)
@@ -31,9 +31,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           assignee: ${{ github.actor }}
           label: bugfix
-          template: .github/PULL_REQUEST_TEMPLATE/BUGFIX.md
-          old_string: "<!-- Write you description here -->"
-          new_string: ${{ github.event.commits[0].message }}
+          template: .github/PULL_REQUEST_TEMPLATE.md
           get_diff: true
 
       - name: Create pull request - feature (conditional)
@@ -43,9 +41,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           assignee: ${{ github.actor }}
           label: feature
-          template: .github/PULL_REQUEST_TEMPLATE/FEATURE.md
-          old_string: "<!-- Write you description here -->"
-          new_string: ${{ github.event.commits[0].message }}
+          template: .github/PULL_REQUEST_TEMPLATE.md
           get_diff: true
 
       - name: Create pull request - documentation (conditional)
@@ -55,9 +51,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           assignee: ${{ github.actor }}
           label: documentation
-          template: .github/PULL_REQUEST_TEMPLATE/DOCUMENTATION.md
-          old_string: "<!-- Write you description here -->"
-          new_string: ${{ github.event.commits[0].message }}
+          template: .github/PULL_REQUEST_TEMPLATE.md
           get_diff: true
 
       - name: Create pull request - other (conditional)
@@ -67,7 +61,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           assignee: ${{ github.actor }}
           label: feature
-          template: .github/PULL_REQUEST_TEMPLATE/FEATURE.md
-          old_string: "<!-- Write you description here -->"
-          new_string: ${{ github.event.commits[0].message }}
+          template: .github/PULL_REQUEST_TEMPLATE.md
           get_diff: true
